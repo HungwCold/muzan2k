@@ -1,6 +1,58 @@
 (function($) {
 	"use strict"
 
+	$.ajax({
+		type: 'GET',
+		url: 'http://localhost:8080/demo/Data.php',
+		dataType: 'JSON',
+		success: function(data) {
+			renderItemProducts(data);
+		}
+	});
+
+	function renderItemProducts(data) {
+		var html= `<div class="products-slick" data-nav="#slick-nav-1">`;
+
+		for (let i = 0; i < data.length; i++) 
+		{
+			html += ` <div class="product">
+			<div class="product-img">
+			   <img class="img-test" src="`+data[i].url+`">
+			   <div class="product-label">
+				  <span class="sale">-30%</span>
+				  <span class="new">NEW</span>
+			   </div>
+			</div>
+			<div class="product-body">
+			   <p class="product-category">Category</p>
+			   <h3 class="product-name"><a href="#">`+data[i].name+`</a></h3>
+			   <h4 class="product-price">`+data[i].price+` <del class="product-old-price">`+data[i].price+`</del></h4>
+			   <div class="product-rating">
+				  <i class="fa fa-star"></i>
+				  <i class="fa fa-star"></i>
+				  <i class="fa fa-star"></i>
+				  <i class="fa fa-star"></i>
+				  <i class="fa fa-star"></i>
+			   </div>
+			   <div class="product-btns">
+				  <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+				  <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+				  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+			   </div>
+			</div>
+			<div class="add-to-cart">
+			   <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+			</div>
+		 </div>`;
+		}
+		html += ` </div>`;
+		$("#tab1").html(html);
+		$('.products-slick').slick({
+			infinite: true,
+			slidesToShow: 4,
+			slidesToScroll: 4
+		  });
+	}
 	// Mobile Nav toggle
 	$('.menu-toggle > a').on('click', function (e) {
 		e.preventDefault();
@@ -128,13 +180,6 @@
 	var priceInputMax = document.getElementById('price-max'),
 			priceInputMin = document.getElementById('price-min');
 
-	priceInputMax.addEventListener('change', function(){
-		updatePriceSlider($(this).parent() , this.value)
-	});
-
-	priceInputMin.addEventListener('change', function(){
-		updatePriceSlider($(this).parent() , this.value)
-	});
 
 	function updatePriceSlider(elem , value) {
 		if ( elem.hasClass('price-min') ) {
