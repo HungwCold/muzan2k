@@ -10,6 +10,7 @@ class Dbconfig {
         $this ->userName = 'root';
         $this ->passCode = 'root123';
         $this ->dbName = 'demo';
+        echo "mai la ae ";
     }
 }
 ?>

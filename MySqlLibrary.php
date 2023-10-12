@@ -43,7 +43,21 @@ class Mysql extends Dbconfig {
     }
 
     function selectAll($tableName)  {
-        $this->sqlQuery = 'SELECT * FROM ' . $tableName;
+        $this->sqlQuery = 'select 
+        products.id , 
+        products.name ,  
+        products_image.create_date , 
+        products_price.price , 
+        products_image.url
+        from products 
+            inner 
+                JOIN 
+                    products_image 
+                        on products.id = products_image.products_id
+                JOIN
+                    products_price 
+                        on products.id = products_price.products_id
+        GROUP BY products.name';
         $this ->dataSet = mysqli_query($this->connectionString, $this->sqlQuery);
         return $this->dataSet;
     }

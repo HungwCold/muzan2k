@@ -56,7 +56,7 @@
                               <option value="1">Category 01</option>
                               <option value="1">Category 02</option>
                            </select>
-                           <input class="input" placeholder="Search here">
+                           <input class="input" id = "search" placeholder="Search here">
                            <button class="search-btn">Search</button>
                         </form>
                      </div>
@@ -196,15 +196,15 @@
                      <div class="products-tabs">
                         <div id="tab1" class="tab-pane active">
                            <div class="products-slick" data-nav="#slick-nav-1">
-                   <?php $getProducts = new Mysql();
+                    <!-- <?php $getProducts = new Mysql();
                            $getProducts->dbConnect();
                            $query = $getProducts->selectAll('products');
 
                            while($row= mysqli_fetch_array($query)) {
-      ?>
+      ?> 
    <div class="product">
                                  <div class="product-img">
-                                    <img src="./img/product01.png" alt>
+                                    <img src="<?php echo $row["url"]; ?>" alt>
                                     <div class="product-label">
                                        <span class="sale">-30%</span>
                                        <span class="new">NEW</span>
@@ -213,7 +213,7 @@
                                  <div class="product-body">
                                     <p class="product-category">Category</p>
                                     <h3 class="product-name"><a href="#"><?php echo $row["name"]; ?></a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <h4 class="product-price"><?php echo $row["price"]; ?><del class="product-old-price"><?php echo $row["price"]; ?></del></h4>
                                     <div class="product-rating">
                                        <i class="fa fa-star"></i>
                                        <i class="fa fa-star"></i>
@@ -231,7 +231,7 @@
                                     <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                  </div>
                               </div>
- <?php   } ?>
+ <?php   } ?>  -->
                            
                            </div>
                            <div id="slick-nav-1" class="products-slick-nav"></div>
