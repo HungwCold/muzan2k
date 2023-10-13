@@ -196,7 +196,7 @@
                      <div class="products-tabs">
                         <div id="tab1" class="tab-pane active">
                            <div class="products-slick" data-nav="#slick-nav-1">
-                    <?php $getProducts = new Mysql();
+                    <!-- <?php $getProducts = new Mysql();
                            $getProducts->dbConnect();
                            $query = $getProducts->selectAll('products');
 
@@ -213,7 +213,7 @@
                                  <div class="product-body">
                                     <p class="product-category">Category</p>
                                     <h3 class="product-name"><a href="#"><?php echo $row["name"]; ?></a></h3>
-                                    <h4 class="product-price"><?php echo $row["price"]; ?><del class="product-old-price">$990.00</del></h4>
+                                    <h4 class="product-price"><?php echo $row["price"]; ?><del class="product-old-price"><?php echo $row["price"]; ?></del></h4>
                                     <div class="product-rating">
                                        <i class="fa fa-star"></i>
                                        <i class="fa fa-star"></i>
@@ -231,21 +231,10 @@
                                     <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                  </div>
                               </div>
- <?php   } ?> 
-                           
-                           </div>
-                           <div id="slick-nav-1" class="products-slick-nav"></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div id="hot-deal" class="section">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
+ <?php   } ?>  -->
+ <div></div>
+ <?php    ?>
+      <div class="col-md-12">
                   <div class="hot-deal">
                      <ul class="hot-deal-countdown">
                         <li>
