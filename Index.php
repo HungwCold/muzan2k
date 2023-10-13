@@ -232,20 +232,9 @@
                                  </div>
                               </div>
  <?php   } ?>  -->
-                           
-                           </div>
-                           <div id="slick-nav-1" class="products-slick-nav"></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div id="hot-deal" class="section">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
+ <div></div>
+ <?php    ?>
+      <div class="col-md-12">
                   <div class="hot-deal">
                      <ul class="hot-deal-countdown">
                         <li>
