@@ -196,6 +196,17 @@
                      <div class="products-tabs">
                         <div id="tab1" class="tab-pane active">
                            <div class="products-slick" data-nav="#slick-nav-1">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- code api bằng Javascript -->
+                    
+                    
+                    
                     <!-- <?php $getProducts = new Mysql();
                            $getProducts->dbConnect();
                            $query = $getProducts->selectAll('products');
@@ -232,6 +243,16 @@
                                  </div>
                               </div>
  <?php   } ?>  -->
+
+
+
+
+
+
+
+
+
+
  <div></div>
  <?php    ?>
       <div class="col-md-12">
