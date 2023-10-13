@@ -1,3 +1,11 @@
+
+
+
+
+	// Tạo Ajax tự lấy data
+
+
+
 (function($) {
 	"use strict"
 
@@ -10,7 +18,15 @@
 		}
 	});
 
-	function renderItemProducts(data) {
+
+
+
+
+
+	//  code api bằng Javascript
+
+
+function renderItemProducts(data) {
 		var html= `<div class="products-slick" data-nav="#slick-nav-1">`;
 
 		for (let i = 0; i < data.length; i++) 
@@ -53,6 +69,17 @@
 			slidesToScroll: 4
 		  });
 	}
+
+
+
+
+
+
+
+
+
+
+
 	// Mobile Nav toggle
 	$('.menu-toggle > a').on('click', function (e) {
 		e.preventDefault();

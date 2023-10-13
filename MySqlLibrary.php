@@ -41,19 +41,28 @@ class Mysql extends Dbconfig {
         $this -> userName = NULL;
         $this -> passCode = NULL;
     }
+    
+
+
+
+    // code api bằng Javascript 
 
     function selectAll($tableName)  {
-        $this->sqlQuery = 'SELECT
-        products.id,
-        products.name,
-        products.catalog,
-        products_price.price,
-        products.create_date,
+        $this->sqlQuery = 'select 
+        products.id , 
+        products.name ,  
+        products_image.create_date , 
+        products_price.price , 
         products_image.url
-    FROM products
-        INNER JOIN products_price ON products.id = products_price.id
-        INNER JOIN products_image ON products.id = products_image.id
-    GROUP BY name;';
+        from products 
+            inner 
+                JOIN 
+                    products_image 
+                        on products.id = products_image.products_id
+                JOIN
+                    products_price 
+                        on products.id = products_price.products_id
+        GROUP BY products.name';
         $this ->dataSet = mysqli_query($this->connectionString, $this->sqlQuery);
         return $this->dataSet;
     }
